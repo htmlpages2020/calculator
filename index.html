@@ -1,0 +1,220 @@
+<html>
+<head>
+	<title>Scientific Calculator</title>
+	<style>
+		.tab td
+		{
+			width:50px;
+		}
+		button
+		{
+			background-color:grey;
+			width:100%;
+			font-size:30px;
+		}
+	</style>
+</head>
+<body>
+	<header style="background-color:green;color:white;width:100%;height:60px;text-align:center;"><h1 style="padding-top:5px">Scientific Calculator</h1></header>
+	<br/>
+	<table class="tab" align="center" border=1 >
+		<tr><td colspan="4"><input type="text" id="cont" style="width:407px;height:50px;font-size:30px;"></td></tr>
+		<tr><td colspan="2"><input type="text" id="pow1" placeholder="X value" style="width:200px;height:30px;font-size:20px;"></td>
+		<td colspan="2"><input type="text" id="pow2" placeholder="Power value" style="width:200px;height:30px;font-size:20px;" ></td></tr>
+		<tr><td><button onclick="C()" >C</td>
+			<td><button onclick="pow()" >POW</td>
+			<td><button onclick="sin()" >SIN</td>
+			<td><button onclick="cos()" >COS</td>
+		</tr>
+		<tr><td><button onclick="tan()" >TAN</td>
+			<td><button onclick="sq()" >SQRT</td>
+			<td><button onclick="ex()" >X^2</td>
+			<td><button onclick="log()" >LOG</td>
+		</tr>
+		<tr><td><button onclick="exp()" >EXP</td>
+			<td><button onclick="pi()" >π</td>
+			<td><button onclick="ob()" >(</td>
+			<td><button onclick="cb()" >)</td>
+		</tr>
+		<tr><td><button onclick="ln()" >ln</td>
+			<td><button onclick="del()" >DEL</td>
+			<td><button onclick="fact()" >x!</td>
+			<td><button onclick="mod()" >%</td>
+		</tr>
+		
+		<tr><td><button onclick="seven()" >7</td>
+			<td><button onclick="eight()" >8</td>
+			<td><button onclick="nine()" >9</td>
+			<td><button onclick="divi()" >/</td>
+		</tr>
+		<tr><td><button onclick="four()" >4</td>
+			<td><button onclick="five()" >5</td>
+			<td><button onclick="six()" >6</td>
+			<td><button onclick="mul()" >*</td>
+		</tr>
+		<tr><td><button onclick="one()" >1</td>
+			<td><button onclick="two()" >2</td>
+			<td><button onclick="three()" >3</td>
+			<td><button onclick="minus()" >-</td>
+		</tr>
+		<tr><td><button onclick="point()" >.</td>
+			<td><button onclick="zero()" >0</td>
+			<td><button onclick="equal()" >=</td>
+			<td><button onclick="plus()" >+</td>
+		</tr>
+		<tr><td colspan="4"><center>Note:To give values to 2 row input box use keyboard</center></td></tr>
+	</table>
+	
+	<script>
+		document.getElementById("cont").focus();
+		function del()
+		{
+			var n=document.getElementById("cont").value;
+			var str=n.substring(0,n.length-1);
+			document.getElementById("cont").value=str;
+			
+		}
+		function C()
+		{
+			document.getElementById("cont").value="";
+		}
+		function pow()
+		{
+			var a=document.getElementById("pow1").value;
+			var b=document.getElementById("pow2").value;
+			document.getElementById("cont").value=Math.pow(a,b);
+			document.getElementById("pow1").value="";
+			document.getElementById("pow2").value="";
+		}
+		
+		function sin()
+		{
+			document.getElementById("cont").value=Math.sin(document.getElementById("cont").value);
+		}
+		function cos()
+		{
+			document.getElementById("cont").value=Math.cos(document.getElementById("cont").value);
+		}
+		function tan()
+		{
+			document.getElementById("cont").value=Math.tan(document.getElementById("cont").value);
+		}
+		function sq()
+		{
+			document.getElementById("cont").value=Math.sqrt(document.getElementById("cont").value);
+		}
+		function ex()
+		{
+			document.getElementById("cont").value=(eval(document.getElementById("cont").value))*(eval(document.getElementById("cont").value));
+		}
+		function log()
+		{
+			document.getElementById("cont").value=Math.log(document.getElementById("cont").value);
+		}
+		function exp()
+		{
+			document.getElementById("cont").value=Math.exp(document.getElementById("cont").value);
+		}
+		function pi()
+		{
+			document.getElementById("cont").value=Math.PI;
+		}
+		function ob()
+		{
+				document.getElementById("cont").value+="(";
+		}
+		function cb()
+		{
+				document.getElementById("cont").value+=")";
+		}
+		function ln()
+		{
+			document.getElementById("cont").value=Math.log(document.getElementById("cont").value);
+		}
+		function fact()
+		{
+			var n=document.getElementById("cont").value;
+			var f=1;
+			for(var i=1;i<=n;i++)
+				f=f*i;
+			document.getElementById("cont").value=f;
+		}
+		function mod()
+		{
+			document.getElementById("cont").value+="%";
+		}
+		function seven()
+		{
+			
+				document.getElementById("cont").value+="7";
+			
+		}
+		function eight()
+		{
+			document.getElementById("cont").value+=+"8";
+		}
+		function nine()
+		{
+			document.getElementById("cont").value+="9";
+		}
+		function six()
+		{
+			document.getElementById("cont").value+="6";
+		}
+		function five()
+		{
+			document.getElementById("cont").value+="5";
+		}
+		function four()
+		{
+			document.getElementById("cont").value+="4";
+		}
+		function three()
+		{
+			document.getElementById("cont").value+="3";
+		}
+		function two()
+		{
+			document.getElementById("cont").value+="2";
+		}
+		function one()
+		{
+			document.getElementById("cont").value+="1";
+		}
+		function zero()
+		{
+			document.getElementById("cont").value+="0";
+		}
+		function minus()
+		{
+			document.getElementById("cont").value+="-";
+		}
+		function plus()
+		{
+			document.getElementById("cont").value+="+";
+		}
+		function mul()
+		{
+			document.getElementById("cont").value+="*";
+		}
+		function divi()
+		{
+			document.getElementById("cont").value+="/";
+		}
+		function point()
+		{
+			document.getElementById("cont").value+=".";
+		}
+		function equal()
+		{
+			var calculate=document.getElementById("cont").value;
+			var res=eval(calculate);
+			document.getElementById("cont").value=res;
+		}
+		var d=new Date();
+		document.getElementById("foot").innerHTML="Visited on "+d;
+	</script>
+	
+
+</body>
+</html>
